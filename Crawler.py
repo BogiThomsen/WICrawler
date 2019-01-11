@@ -9,8 +9,8 @@ import Frontier
 import pymongo
 
 seed = ["http://yahoo.com", "http://www.youtube.com", "http://www.dba.dk", "http://www.dr.dk", "https://www.bt.dk", "https://en.wikipedia.org", "https://www.aau.dk", "https://tv2.dk", "http://bilbasen.dk"]
-number_of_crawlers = 7
-number_of_priorities = 10
+number_of_crawlers = 4
+number_of_priorities = 6
 user_agent = "CrawlyMcCrawlFace"
 header = {"User-Agent": user_agent}
 

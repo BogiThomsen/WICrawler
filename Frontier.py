@@ -23,14 +23,19 @@ def initialize_queues_and_priorities(number_of_crawlers, number_of_priorities):
 
 
 def prioritize_urls(urls, number_of_priorities):
-  #!?!?!??!?!!?!?!?1
-  i = 1
   for url in urls:
-    add_to_front(url, i)
-    if i % (number_of_priorities) == 0:
-      i = 1
+    if 'wiki' in url:
+      add_to_front(url, number_of_priorities)
+    elif 'news' in url:
+      add_to_front(url, (number_of_priorities-(number_of_priorities-4)))
+    elif '.com' in url:
+      add_to_front(url, (number_of_priorities-(number_of_priorities-3)))
+    elif '.org' in url:
+      add_to_front(url, (number_of_priorities-(number_of_priorities-2)))
+    elif ".dk" in url:
+      add_to_front(url, (number_of_priorities-(number_of_priorities-1)))
     else:
-      i=i+1
+      add_to_front(url, (number_of_priorities-(number_of_priorities-5)))
 
 def add_to_front(url, priority):
   front_queues[str(priority)].put(url)
